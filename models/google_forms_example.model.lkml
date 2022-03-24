@@ -10,4 +10,4 @@ datagroup: google_forms_example_1_default_datagroup {
 
 persist_with: google_forms_example_1_default_datagroup
 
-explore: google_forms_example_out {}
+explore: google_forms_example {}

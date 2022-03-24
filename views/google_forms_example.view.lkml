@@ -1,4 +1,4 @@
-view: google_forms_example_out {
+view: google_forms_example {
   sql_table_name: `google_forms.google_forms_example_out`
     ;;
 
