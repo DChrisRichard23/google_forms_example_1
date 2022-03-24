@@ -15,6 +15,7 @@ view: google_forms_example_out {
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
+    primary_key: yes
   }
 
   dimension_group: entry_date {
@@ -52,8 +53,22 @@ view: google_forms_example_out {
     sql: ${TABLE}.entry_time ;;
   }
 
-  measure: count {
+  measure: entries {
     type: count
     drill_fields: []
+  }
+
+  measure: attending_count {
+    type: count_distinct
+    sql: email ;;
+    filters: [attend_indicator: "Attending"]
+    value_format_name: decimal_0
+  }
+
+  measure: not_attending_count {
+    type: count_distinct
+    sql: email ;;
+    filters: [attend_indicator: "Not Attending"]
+    value_format_name: decimal_0
   }
 }
